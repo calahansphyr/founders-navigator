@@ -33,6 +33,7 @@
   --color-border-subtle: #E2E8F0;
   --color-deep-navy: #0F172A;
   --color-background-light: #F8FAFC;
+  --color-startup-green: #1de384;
 
   /* Typography */
   --font-display: 'Space Grotesk', sans-serif;
@@ -41,6 +42,22 @@
 
   /* Border radius */
   --radius-bento: 12px;
+
+  /* Spacing tokens */
+  --spacing-section-padding: 4rem;
+  --spacing-component-padding: 1.5rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-bento-gap: 1.5rem;
+  --spacing-container-max: 1280px;
+
+  /* Font sizes */
+  --text-headline-lg: 40px;
+  --text-headline-md: 28px;
+  --text-section-header: 14px;
+  --text-body-lg: 18px;
+  --text-body-md: 16px;
+  --text-label-sm: 12px;
+  --text-metric-lg: 32px;
 }
 
 body {
