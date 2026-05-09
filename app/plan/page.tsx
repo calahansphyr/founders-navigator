@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import Nav from '@/components/Nav'
 import RecommendationCard from '@/components/RecommendationCard'
 import RightInspector from '@/components/RightInspector'
@@ -209,6 +210,14 @@ export default function PlanPage() {
                         {chip.label}
                       </button>
                     ))}
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-slate-100 text-center">
+                    <Link
+                      href="/resources"
+                      className="text-sm text-on-surface-variant hover:text-startup-green transition-colors"
+                    >
+                      Browse all 213 official Utah resources →
+                    </Link>
                   </div>
                 </div>
               )}
