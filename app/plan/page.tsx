@@ -82,21 +82,6 @@ export default function PlanPage() {
                   </div>
                 </div>
 
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                      Progress
-                    </span>
-                    <span className="text-xs font-bold text-success">85%</span>
-                  </div>
-                  <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-success/80 to-success"
-                      style={{ width: '85%' }}
-                    />
-                  </div>
-                </div>
-
                 <nav className="flex flex-col gap-1.5">
                   {siteConfig.leftRailSections.map((section) => (
                     <button
