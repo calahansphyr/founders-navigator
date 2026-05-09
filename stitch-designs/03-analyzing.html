@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Founder's Navigator - Matching State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#bbc7e2",
+                        "on-tertiary-fixed-variant": "#3c475d",
+                        "secondary-fixed-dim": "#1de384",
+                        "primary": "#815600",
+                        "on-surface": "#191c1e",
+                        "inverse-primary": "#ffba48",
+                        "outline-variant": "#d7c4ac",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#b3bed9",
+                        "on-primary-fixed-variant": "#614000",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2d3133",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed": "#291800",
+                        "on-secondary-fixed-variant": "#00522c",
+                        "background": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#535f76",
+                        "secondary-container": "#4afd9b",
+                        "on-surface-variant": "#524533",
+                        "primary-container": "#ffae00",
+                        "on-tertiary-fixed": "#101c30",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "secondary": "#006d3c",
+                        "on-primary-container": "#6a4600",
+                        "on-secondary-fixed": "#00210e",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container": "#eceef0",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#424d63",
+                        "on-secondary-container": "#00723f",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#d7e3fe",
+                        "primary-fixed": "#ffddb1",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-tint": "#815600",
+                        "outline": "#847560",
+                        "primary-fixed-dim": "#ffba48",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-fixed": "#5bffa1",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "bento": "12px"
+                    },
+                    "spacing": {
+                        "section-padding": "4rem",
+                        "component-padding": "1.25rem",
+                        "container-max": "1280px",
+                        "gutter": "1.5rem",
+                        "bento-gap": "1rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": [
+                            "Space Grotesk"
+                        ],
+                        "body-md": [
+                            "Public Sans"
+                        ],
+                        "body-lg": [
+                            "Public Sans"
+                        ],
+                        "metric-lg": [
+                            "Public Sans"
+                        ],
+                        "label-sm": [
+                            "Public Sans"
+                        ],
+                        "headline-lg": [
+                            "Space Grotesk"
+                        ],
+                        "section-header": [
+                            "Space Grotesk"
+                        ],
+                        "terminal": [
+                            "JetBrains Mono", "monospace"
+                        ]
+                    },
+                    "fontSize": {
+                        "headline-md": [
+                            "28px",
+                            {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "18px",
+                            {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "metric-lg": [
+                            "32px",
+                            {
+                                "lineHeight": "1",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                            }
+                        ],
+                        "headline-lg": [
+                            "40px",
+                            {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "section-header": [
+                            "14px",
+                            {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                            }
+                        ]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .terminal-text {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom animation classes for visual effect only, no keyframes defined as per constraints, using static representation of state */
+        .pulse-ring {
+            box-shadow: 0 0 0 0 rgba(17, 223, 129, 0.4);
+        }
+    </style>
+</head>
+<!-- Removed TopAppBar and Footer as this is a focused, linear transition state screen meant to occupy the full canvas without global navigation distractions -->
+<body class="bg-[#0f172a] text-surface min-h-screen flex items-center justify-center relative overflow-hidden font-body-md">
+<!-- Immersive Background Graphics -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, transparent 70%);">
+<!-- Abstract Network Nodes representation via static SVG -->
+<svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"></path>
+<circle cx="0" cy="0" fill="rgba(17, 223, 129, 0.3)" r="1.5"></circle>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+<path d="M 200 200 L 400 300 L 350 500 Z" fill="none" stroke="rgba(17, 223, 129, 0.1)" stroke-width="1"></path>
+<path d="M 800 150 L 900 400 L 700 600 Z" fill="none" stroke="rgba(17, 223, 129, 0.1)" stroke-width="1"></path>
+</svg>
+</div>
+<!-- Centered Modal Container -->
+<main class="relative z-10 w-full max-w-lg px-gutter">
+<div class="bg-surface rounded-bento border border-[#E2E8F0] p-[3rem] flex flex-col items-center text-center shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)]">
+<!-- Animated SVG Spinner / Pulse Ring Static Representation -->
+<div class="relative w-24 h-24 mb-8 flex items-center justify-center">
+<div class="absolute inset-0 rounded-full border-4 border-[#11DF81] opacity-20 pulse-ring"></div>
+<div class="absolute inset-2 rounded-full border-4 border-t-[#11DF81] border-r-[#11DF81] border-b-transparent border-l-transparent" style="transform: rotate(45deg);"></div>
+<span class="material-symbols-outlined text-4xl text-[#11DF81]">search</span>
+</div>
+<!-- Header -->
+<h1 class="text-headline-md font-headline-md text-on-surface mb-2">Analyzing Profile</h1>
+<p class="text-body-md font-body-md text-on-surface-variant mb-10">Matching your business needs with Utah's ecosystem.</p>
+<!-- Terminal Typewriter Text -->
+<div class="w-full bg-[#f8fafc] border border-[#E2E8F0] rounded p-4 mb-8 text-left h-[80px] flex items-center overflow-hidden relative">
+<div class="terminal-text text-sm text-[#0f172a] opacity-80 whitespace-nowrap">
+<span class="text-[#11DF81] mr-2">&gt;&gt;</span> Cross-referencing tax incentives...<span class="animate-pulse">_</span>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full">
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Optimization Status</span>
+<span class="text-label-sm font-label-sm text-on-surface font-bold">68%</span>
+</div>
+<div class="h-2 w-full bg-[#E2E8F0] rounded-sm overflow-hidden">
+<div class="h-full bg-[#11DF81] rounded-sm" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

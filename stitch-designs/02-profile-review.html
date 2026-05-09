@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Review - Founder's Navigator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed": "#101c30",
+                        "surface": "#f7f9fb",
+                        "primary-container": "#ffae00",
+                        "outline-variant": "#d7c4ac",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#ffba48",
+                        "on-secondary-container": "#00723f",
+                        "secondary-fixed-dim": "#1de384",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed": "#d7e3fe",
+                        "secondary-container": "#4afd9b",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "outline": "#847560",
+                        "tertiary-fixed-dim": "#bbc7e2",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#424d63",
+                        "on-secondary-fixed": "#00210e",
+                        "on-primary-fixed-variant": "#614000",
+                        "secondary": "#006d3c",
+                        "surface-tint": "#815600",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#F8FAFC",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-fixed-variant": "#3c475d",
+                        "tertiary": "#535f76",
+                        "primary": "#815600",
+                        "on-surface-variant": "#524533",
+                        "on-secondary-fixed-variant": "#00522c",
+                        "on-primary-container": "#6a4600",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed": "#ffddb1",
+                        "tertiary-container": "#b3bed9",
+                        "secondary-fixed": "#5bffa1",
+                        "on-background": "#191c1e",
+                        "surface-variant": "#e0e3e5",
+                        "inverse-primary": "#ffba48",
+                        "on-primary-fixed": "#291800",
+                        "surface-container-high": "#e6e8ea",
+                        "innovation-orange": "#FF9F43",
+                        "deep-navy": "#0F172A"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "component-padding": "1.25rem",
+                        "bento-gap": "1rem",
+                        "section-padding": "4rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "section-header": ["Space Grotesk"],
+                        "label-sm": ["Public Sans"],
+                        "headline-md": ["Space Grotesk"],
+                        "metric-lg": ["Public Sans"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "section-header": ["14px", { "lineHeight": "1.6", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "metric-lg": ["32px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="bg-surface-container-lowest border-b border-[#E2E8F0] sticky top-0 z-50">
+<div class="max-w-container-max mx-auto px-gutter h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-innovation-orange text-2xl fill" data-icon="explore">explore</span>
+<span class="font-headline-md text-xl text-deep-navy">Founder's Navigator</span>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-innovation-orange transition-colors" href="#">Dashboard</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-innovation-orange transition-colors" href="#">My Profile</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-innovation-orange transition-colors" href="#">Resources</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-deep-navy transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-label-sm font-label-sm text-deep-navy font-bold">
+                    JS
+                </div>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-gutter py-section-padding">
+<!-- Back Navigation (Contextual) -->
+<div class="mb-8 max-w-4xl mx-auto">
+<a class="inline-flex items-center text-on-surface-variant hover:text-innovation-orange transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-2 text-[18px]" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-sm text-[14px] font-semibold">Back to Setup</span>
+</a>
+</div>
+<!-- Header -->
+<div class="mb-10 max-w-4xl mx-auto">
+<h1 class="text-headline-lg font-headline-lg text-deep-navy mb-4">Confirm your business profile</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl">Review your answers below. We will use this information to generate a customized action plan for your startup.</p>
+</div>
+<!-- Review Card -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-[12px] mb-10 overflow-hidden max-w-4xl mx-auto shadow-[0_10px_25px_-5px_rgba(15,23,42,0.1)]">
+<div class="p-6 border-b border-[#E2E8F0] bg-white">
+<h2 class="text-section-header font-section-header uppercase text-deep-navy tracking-wider">Profile Details</h2>
+</div>
+<dl class="divide-y divide-[#E2E8F0] bg-white">
+<!-- Data Row 1 -->
+<div class="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 p-6 hover:bg-surface transition-colors duration-150 group">
+<dt class="flex items-center gap-3 w-48">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-innovation-orange">
+<span class="material-symbols-outlined text-[20px]" data-icon="location_on">location_on</span>
+</div>
+<span class="font-label-sm text-[13px] uppercase tracking-wider text-on-surface-variant font-bold">Location</span>
+</dt>
+<dd class="text-body-lg font-body-lg text-deep-navy font-medium">Salt Lake City, Utah</dd>
+<dd class="text-left md:text-right">
+<a class="text-innovation-orange hover:text-orange-600 transition-colors duration-200 font-label-sm text-[14px] inline-flex items-center" href="#">
+                            Change <span class="sr-only">Location</span>
+<span class="material-symbols-outlined text-[16px] ml-1 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 duration-200" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</dd>
+</div>
+<!-- Data Row 2 -->
+<div class="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 p-6 hover:bg-surface transition-colors duration-150 group">
+<dt class="flex items-center gap-3 w-48">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-innovation-orange">
+<span class="material-symbols-outlined text-[20px]" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<span class="font-label-sm text-[13px] uppercase tracking-wider text-on-surface-variant font-bold">Business Stage</span>
+</dt>
+<dd class="text-body-lg font-body-lg text-deep-navy font-medium">Idea Phase</dd>
+<dd class="text-left md:text-right">
+<a class="text-innovation-orange hover:text-orange-600 transition-colors duration-200 font-label-sm text-[14px] inline-flex items-center" href="#">
+                            Change <span class="sr-only">Business Stage</span>
+<span class="material-symbols-outlined text-[16px] ml-1 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 duration-200" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</dd>
+</div>
+<!-- Data Row 3 -->
+<div class="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 p-6 hover:bg-surface transition-colors duration-150 group">
+<dt class="flex items-center gap-3 w-48">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-innovation-orange">
+<span class="material-symbols-outlined text-[20px]" data-icon="domain">domain</span>
+</div>
+<span class="font-label-sm text-[13px] uppercase tracking-wider text-on-surface-variant font-bold">Industry Sector</span>
+</dt>
+<dd class="text-body-lg font-body-lg text-deep-navy font-medium">Technology &amp; Software Development</dd>
+<dd class="text-left md:text-right">
+<a class="text-innovation-orange hover:text-orange-600 transition-colors duration-200 font-label-sm text-[14px] inline-flex items-center" href="#">
+                            Change <span class="sr-only">Industry Sector</span>
+<span class="material-symbols-outlined text-[16px] ml-1 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 duration-200" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</dd>
+</div>
+<!-- Data Row 4 -->
+<div class="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 p-6 hover:bg-surface transition-colors duration-150 group">
+<dt class="flex items-center gap-3 w-48">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-innovation-orange">
+<span class="material-symbols-outlined text-[20px]" data-icon="flag">flag</span>
+</div>
+<span class="font-label-sm text-[13px] uppercase tracking-wider text-on-surface-variant font-bold">Primary Goal</span>
+</dt>
+<dd class="text-body-lg font-body-lg text-deep-navy font-medium">Register LLC</dd>
+<dd class="text-left md:text-right">
+<a class="text-innovation-orange hover:text-orange-600 transition-colors duration-200 font-label-sm text-[14px] inline-flex items-center" href="#">
+                            Change <span class="sr-only">Primary Goal</span>
+<span class="material-symbols-outlined text-[16px] ml-1 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 duration-200" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</dd>
+</div>
+<!-- Data Row 5 -->
+<div class="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 p-6 hover:bg-surface transition-colors duration-150 group">
+<dt class="flex items-center gap-3 w-48">
+<div class="w-10 h-10 rounded-full bg-orange-50 flex items-center justify-center text-innovation-orange">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_month">calendar_month</span>
+</div>
+<span class="font-label-sm text-[13px] uppercase tracking-wider text-on-surface-variant font-bold">Timeline</span>
+</dt>
+<dd class="text-body-lg font-body-lg text-deep-navy font-medium">Within 30 days</dd>
+<dd class="text-left md:text-right">
+<a class="text-innovation-orange hover:text-orange-600 transition-colors duration-200 font-label-sm text-[14px] inline-flex items-center" href="#">
+                            Change <span class="sr-only">Timeline</span>
+<span class="material-symbols-outlined text-[16px] ml-1 opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1 duration-200" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</dd>
+</div>
+</dl>
+</div>
+<!-- Action Area -->
+<div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 pt-4">
+<button class="w-full sm:w-auto min-w-[220px] bg-deep-navy text-white py-3.5 px-6 rounded-lg text-[15px] font-label-sm font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+                Generate Action Plan
+            </button>
+<button class="w-full sm:w-auto min-w-[140px] bg-white text-deep-navy border border-[#E2E8F0] py-3.5 px-6 rounded-lg text-[15px] font-label-sm font-semibold hover:bg-slate-50 transition-colors duration-200 shadow-sm">
+                Save for later
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-[#E2E8F0] mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-8 px-gutter w-full max-w-container-max mx-auto gap-6 md:gap-0">
+<div class="text-[12px] font-section-header uppercase tracking-widest text-on-surface-variant font-semibold">
+                © 2024 State of Utah. An official Startup State initiative.
+            </div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="text-[13px] font-label-sm text-on-surface-variant hover:text-innovation-orange transition-colors font-medium" href="#">Privacy Policy</a>
+<a class="text-[13px] font-label-sm text-on-surface-variant hover:text-innovation-orange transition-colors font-medium" href="#">Accessibility</a>
+<a class="text-[13px] font-label-sm text-on-surface-variant hover:text-innovation-orange transition-colors font-medium" href="#">Terms of Service</a>
+<a class="text-[13px] font-label-sm text-on-surface-variant hover:text-innovation-orange transition-colors font-medium" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+</body></html>

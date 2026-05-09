@@ -1,0 +1,211 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Founder's Navigator - Official Utah.gov Initiative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffba48",
+                        "surface": "#f7f9fb",
+                        "secondary": "#006d3c",
+                        "primary": "#815600",
+                        "surface-variant": "#e0e3e5",
+                        "surface-bright": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed": "#291800",
+                        "on-secondary-fixed": "#00210e",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#535f76",
+                        "on-secondary-container": "#00723f",
+                        "tertiary-fixed-dim": "#bbc7e2",
+                        "primary-fixed": "#ffddb1",
+                        "on-tertiary-container": "#424d63",
+                        "surface-tint": "#815600",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-fixed-variant": "#3c475d",
+                        "on-tertiary-fixed": "#101c30",
+                        "secondary-fixed": "#5bffa1",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#614000",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-container": "#ffae00",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eceef0",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "outline": "#847560",
+                        "secondary-fixed-dim": "#1de384",
+                        "on-surface-variant": "#524533",
+                        "on-secondary-fixed-variant": "#00522c",
+                        "tertiary-container": "#b3bed9",
+                        "on-error-container": "#93000a",
+                        "background": "#f7f9fb",
+                        "outline-variant": "#d7c4ac",
+                        "primary-fixed-dim": "#ffba48",
+                        "tertiary-fixed": "#d7e3fe",
+                        "on-primary-container": "#6a4600",
+                        "secondary-container": "#4afd9b",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-padding": "4rem",
+                        "component-padding": "1.25rem",
+                        "gutter": "1.5rem",
+                        "bento-gap": "1rem",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "metric-lg": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "section-header": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "metric-lg": ["32px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "section-header": ["14px", { "lineHeight": "1.6", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar Component -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline docked full-width top-0 z-50">
+<div class="flex flex-col w-full max-w-container-max mx-auto px-gutter py-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold text-on-surface dark:text-on-surface-variant tracking-tight">Founder's Navigator</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1" href="#">Start</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md pb-1 hover:text-primary-container dark:hover:text-primary-fixed transition-all duration-200" href="#">Examples</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md pb-1 hover:text-primary-container dark:hover:text-primary-fixed transition-all duration-200" href="#">Resources</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md pb-1 hover:text-primary-container dark:hover:text-primary-fixed transition-all duration-200" href="#">Saved Plans</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md pb-1 hover:text-primary-container dark:hover:text-primary-fixed transition-all duration-200" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary font-label-sm text-label-sm px-6 py-3 rounded-full hover:bg-inverse-primary transition-colors min-w-[120px] font-bold">Start your plan</button>
+<button class="text-on-surface hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[28px]">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden bg-[#0B1A2A] text-white py-24 flex flex-col items-center justify-center px-gutter border-b border-outline-variant lg:py-48">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full z-0 opacity-40">
+<img alt="Utah landscape" class="w-full h-full object-cover" data-alt="A dramatic, high-contrast scenic landscape of Utah's monument valley at dusk, bathed in deep navy blue shadows and striking bright green ambient highlights from a futuristic digital interface overlay. The scene feels vast, inspiring, and technologically advanced, blending raw nature with sharp, modern civic tech aesthetics. The lighting is cinematic, creating a clear visual hierarchy that feels like an incubator launchpad." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1nkWX2a0JXSlV9cemxQTC9-e2FUnGLxlqI1QQIHuy6pnPksrk0y5TE-0Wx6lswO1iEVue_pSMS6z5ZaoYVSVEcPW3Qmm5NlTLMVr0ThESB5C1ASsk7lgxMPg_CYYuCABRTxoArYJIMirxDs8kcxVMWh519lU-eJpPa4asDeJajQWV29oqwgxAn0aJc7zxHMSj9P4TBUy-axXOIPHjCkL9Q55JnxCvl-GgFq_rSsAZsmXGI_Ij0MSsxWpk9kUTJfhwXpwY-jfEQ">
+</div><div class="absolute inset-0 bg-gradient-to-b from-[#0B1A2A]/80 via-[#0B1A2A]/40 to-[#0B1A2A]/90 z-[1]"></div>
+<div class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
+
+<h1 class="text-headline-lg font-headline-lg text-white max-w-3xl leading-tight text-5xl md:text-6xl font-extrabold">
+                    Navigate Your Business Journey with Confidence
+                </h1>
+<p class="text-body-lg font-body-lg text-surface-variant max-w-2xl">
+                    Describe your vision, and we'll map out your next moves based on official state resources.
+                </p>
+<!-- Search/Action Bar -->
+<div class="w-full max-w-3xl mt-4 bg-surface rounded-full p-2 flex items-center shadow-lg border-2 border-outline-variant focus-within:border-[#0B1A2A] focus-within:ring-4 focus-within:ring-primary-container/20 transition-all backdrop-blur-md shadow-2xl bg-white/20 border-white/40">
+<div class="pl-4 pr-2">
+<span class="material-symbols-outlined text-[24px] text-white/80">search</span>
+</div>
+<input class="flex-grow bg-transparent border-none focus:ring-0 text-on-surface font-body-lg text-body-lg placeholder-tertiary text-white placeholder-white" placeholder="Describe your business idea or goal..." type="text">
+<button class="text-on-primary font-label-sm text-label-sm uppercase tracking-wider px-8 py-4 rounded-full hover:bg-inverse-primary transition-colors font-bold whitespace-nowrap shadow-md bg-[#ffae00]">
+                        Generate
+                    </button>
+</div>
+<!-- Chips -->
+<div class="flex flex-wrap items-center justify-center gap-3 mt-6">
+<span class="text-label-sm font-label-sm text-surface-variant uppercase tracking-wider mr-2">Try:</span>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-surface bg-surface/10 hover:bg-surface/20 hover:border-surface transition-colors text-label-sm font-label-sm backdrop-blur-sm">Register an LLC</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-surface bg-surface/10 hover:bg-surface/20 hover:border-surface transition-colors text-label-sm font-label-sm backdrop-blur-sm">Specialty Food</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-surface bg-surface/10 hover:bg-surface/20 hover:border-surface transition-colors text-label-sm font-label-sm backdrop-blur-sm">Outdoor Gear</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-surface bg-surface/10 hover:bg-surface/20 hover:border-surface transition-colors text-label-sm font-label-sm backdrop-blur-sm">SaaS Startup</button>
+</div>
+</div>
+</section>
+<!-- Value Prop Bento Grid -->
+<section class="w-full max-w-container-max mx-auto px-gutter py-section-padding">
+<h2 class="sr-only">Why Founder's Navigator</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-bento-gap">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-[12px] p-component-padding flex flex-col gap-4 hover:shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] hover:border-[#0B1A2A] transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">format_list_numbered</span>
+</div>
+<h3 class="text-section-header font-section-header uppercase text-on-surface">Ranked next moves</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                        Stop guessing. Get a clear, prioritized checklist of exactly what you need to do next to launch or scale your business.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-[12px] p-component-padding flex flex-col gap-4 hover:shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] hover:border-[#0B1A2A] transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h3 class="text-section-header font-section-header uppercase text-on-surface">Source-backed</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                        Every recommendation is tied directly to official state requirements, forms, and verified guidance to ensure compliance.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-[#E2E8F0] rounded-[12px] p-component-padding flex flex-col gap-4 hover:shadow-[0_10px_15px_-3px_rgba(15,23,42,0.08)] hover:border-[#0B1A2A] transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<h3 class="text-section-header font-section-header uppercase text-on-surface">Agent-ready</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                        Export your customized plan instantly to your registered agent or legal team to accelerate your filing process.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline full-width mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-section-padding px-gutter w-full max-w-container-max mx-auto gap-6 md:gap-0">
+<div class="text-section-header font-section-header uppercase tracking-widest text-on-surface-variant">
+                © 2024 State of Utah. An official Startup State initiative.
+            </div>
+<nav class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Accessibility</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-surface-variant text-label-sm font-label-sm hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+</nav>
+</div>
+</footer>
+
+
+</body></html>
