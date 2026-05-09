@@ -12,7 +12,7 @@ export default function HomePage() {
         <section className="relative w-full overflow-hidden bg-navy text-white py-24 lg:py-48 flex flex-col items-center justify-center px-gutter border-b border-outline-variant">
           <div className="absolute inset-0 w-full h-full z-0 opacity-40">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1nkWX2a0JXSlV9cemxQTC9-e2FUnGLxlqI1QQIHuy6pnPksrk0y5TE-0Wx6lswO1iEVue_pSMS6z5ZaoYYSVEcPW3Qmm5NlTLMVr0ThESB5C1ASsk7lgxMPg_CYYuCABRTxoArYJIMirxDs8kcxVMWh519lU-eJpPa4asDeJajQWV29oqwgxAn0aJc7zxHMSj9P4TBUy-axXOIPHjCkL9Q55JnxCvl-GgFq_rSsAZsmXGI_Ij0MSsxWpk9kUTJfhwXpwY-jfEQ"
+              src="/utah-landscape.jpg"
               alt="Utah landscape"
               className="w-full h-full object-cover"
             />
