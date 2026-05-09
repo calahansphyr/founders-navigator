@@ -47,6 +47,26 @@ export default function RecommendationCard({ rec }: Props) {
         </p>
       </div>
 
+      {rec.nextStep && (
+        <div className="bg-innovation-orange/5 border border-innovation-orange/20 rounded-lg p-3">
+          <div className="flex items-center justify-between mb-1">
+            <div className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[16px] text-innovation-orange">
+                arrow_forward
+              </span>
+              <span className="text-xs font-semibold text-innovation-orange">Your next step</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-[12px] text-slate-400">
+                auto_awesome
+              </span>
+              <span className="text-[10px] text-slate-400">Claude</span>
+            </div>
+          </div>
+          <p className="text-sm text-slate-600 leading-relaxed">{rec.nextStep}</p>
+        </div>
+      )}
+
       <div className="flex flex-wrap gap-2">
         {rec.topics.slice(0, 3).map((t) => (
           <span
