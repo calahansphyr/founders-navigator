@@ -17,6 +17,7 @@ const mockRec = (rank: number): Recommendation => ({
   fitLabel: 'Strong match',
   matchedCriteria: 3,
   whyItFits: 'This resource aligns with your goal.',
+  nextStep: rank === 1 ? 'Schedule a free consulting session at the link above.' : '',
 })
 
 const mockProfile = (): FounderProfile => ({
@@ -63,6 +64,17 @@ describe('toMarkdown', () => {
   it('omits Contact when email is empty', () => {
     const md = toMarkdown([mockRec(2)], mockProfile())
     expect(md).not.toContain('**Contact:**')
+  })
+
+  it('includes Your next step when nextStep is non-empty', () => {
+    const md = toMarkdown([mockRec(1)], mockProfile())
+    expect(md).toContain('**Your next step:**')
+    expect(md).toContain('Schedule a free consulting session at the link above.')
+  })
+
+  it('omits Your next step when nextStep is empty', () => {
+    const md = toMarkdown([mockRec(2)], mockProfile())
+    expect(md).not.toContain('**Your next step:**')
   })
 })
 

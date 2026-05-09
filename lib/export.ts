@@ -16,8 +16,9 @@ export function toMarkdown(recs: Recommendation[], profile: FounderProfile): str
     const lines = [
       `## ${rec.rank}. ${rec.title}`,
       `**Why it fits:** ${rec.whyItFits}`,
-      `**Learn more:** ${rec.link}`,
     ]
+    if (rec.nextStep) lines.push(`**Your next step:** ${rec.nextStep}`)
+    lines.push(`**Learn more:** ${rec.link}`)
     if (rec.email) lines.push(`**Contact:** ${rec.email}`)
     return lines.join('\n')
   })
