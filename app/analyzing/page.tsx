@@ -26,8 +26,12 @@ export default function AnalyzingPage() {
         if (res.ok) {
           const data = await res.json()
           const nextSteps: string[] = data.nextSteps ?? []
+          const whyItFits: string[] = data.whyItFits ?? []
           nextSteps.forEach((step, i) => {
-            if (recommendations[i]) recommendations[i].nextStep = step
+            if (recommendations[i]) {
+              recommendations[i].nextStep = step
+              if (whyItFits[i]) recommendations[i].whyItFits = whyItFits[i]
+            }
           })
         } else {
           recommendations.forEach((rec) => {
