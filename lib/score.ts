@@ -51,6 +51,7 @@ export function score(catalog: CatalogItem[], profile: FounderProfile): Recommen
       fitLabel: fitLabel(fitScore),
       matchedCriteria,
       whyItFits,
+      nextStep: '',
     }
   })
 

@@ -77,4 +77,12 @@ export const siteConfig = {
     { label: 'Export for agent',        intent: 'export_agent' },
     { label: 'Explain ranking',         intent: 'explain_ranking' },
   ],
+
+  leftRailSections: [
+    { label: 'Overview',   icon: 'dashboard',   topics: null as string[] | null },
+    { label: 'Financials', icon: 'payments',    topics: ['Funding', 'Taxes and Finance'] },
+    { label: 'Product',    icon: 'inventory_2', topics: ['Start a Business', 'Late Stage Growth'] },
+    { label: 'Marketing',  icon: 'campaign',    topics: ['Marketing and Sales', 'Entrepreneurship Communities'] },
+    { label: 'Legal',      icon: 'work',        topics: ['Start a Business', 'International Trade'] },
+  ],
 }

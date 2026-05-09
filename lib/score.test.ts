@@ -91,4 +91,10 @@ describe('score', () => {
     const results = score([item], profile)
     expect(['Strong match', 'Good match', 'Worth knowing']).toContain(results[0].fitLabel)
   })
+
+  it('sets nextStep to empty string on every result', () => {
+    const item = mockItem()
+    const results = score([item], mockProfile())
+    expect(results[0].nextStep).toBe('')
+  })
 })

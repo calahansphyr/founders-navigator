@@ -34,4 +34,5 @@ export type Recommendation = CatalogItem & {
   fitLabel: 'Strong match' | 'Good match' | 'Worth knowing'
   matchedCriteria: number
   whyItFits: string
+  nextStep: string
 }
