@@ -1,28 +1,23 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import RecommendationCard from '@/components/RecommendationCard'
 import RightInspector from '@/components/RightInspector'
 import Toast from '@/components/Toast'
-import { SESSION_KEYS, type Recommendation, type FounderProfile } from '@/lib/types'
+import { SESSION_KEYS, type Recommendation, type FounderProfile, type CatalogItem } from '@/lib/types'
 import { DEFAULT_PROFILE } from '@/lib/defaults'
 import { siteConfig } from '@/data/config'
+import { score } from '@/lib/score'
 import { toMarkdown, toJSON } from '@/lib/export'
-
-const LEFT_RAIL_LINKS = [
-  { label: 'Overview',   icon: 'dashboard' },
-  { label: 'Financials', icon: 'payments' },
-  { label: 'Product',    icon: 'inventory_2' },
-  { label: 'Marketing',  icon: 'campaign' },
-  { label: 'Legal',      icon: 'work' },
-]
+import catalogData from '@/data/catalog.json'
 
 export default function PlanPage() {
   const router = useRouter()
   const [recommendations, setRecommendations] = useState<Recommendation[]>([])
   const [profile, setProfile] = useState<FounderProfile>(DEFAULT_PROFILE)
+  const [activeSection, setActiveSection] = useState('Overview')
   const [toast, setToast] = useState<string | null>(null)
 
   useEffect(() => {
@@ -34,10 +29,20 @@ export default function PlanPage() {
 
   const planName = `${profile.industry} Plan`
 
+  const displayedRecs = useMemo(() => {
+    const section = siteConfig.leftRailSections.find((s) => s.label === activeSection)
+    const sectionTopics = section?.topics ?? null
+    if (!sectionTopics) return recommendations
+    const filtered = (catalogData as CatalogItem[]).filter((item) =>
+      item.topics.some((t) => sectionTopics.includes(t)),
+    )
+    return score(filtered, profile)
+  }, [activeSection, recommendations, profile])
+
   const timelineGroups = [
-    { label: 'Today',        recs: recommendations.slice(0, 1) },
-    { label: 'This week',    recs: recommendations.slice(1, 3) },
-    { label: 'Next 30 days', recs: recommendations.slice(3, 5) },
+    { label: 'Today',        recs: displayedRecs.slice(0, 1) },
+    { label: 'This week',    recs: displayedRecs.slice(1, 3) },
+    { label: 'Next 30 days', recs: displayedRecs.slice(3, 5) },
   ].filter((g) => g.recs.length > 0)
 
   function download(content: string, filename: string, mime: string) {
@@ -93,21 +98,19 @@ export default function PlanPage() {
                 </div>
 
                 <nav className="flex flex-col gap-1.5">
-                  {LEFT_RAIL_LINKS.map((link, i) => (
-                    <a
-                      key={link.label}
-                      href="#"
-                      title="Coming in production"
-                      className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors opacity-50 cursor-not-allowed ${
-                        i === 0
+                  {siteConfig.leftRailSections.map((section) => (
+                    <button
+                      key={section.label}
+                      onClick={() => setActiveSection(section.label)}
+                      className={`flex items-center gap-3 px-3 py-2.5 rounded-md transition-colors w-full text-left ${
+                        activeSection === section.label
                           ? 'bg-slate-50 text-deep-navy border border-slate-100'
-                          : 'text-slate-600'
+                          : 'text-slate-600 hover:bg-slate-50'
                       }`}
-                      onClick={(e) => e.preventDefault()}
                     >
-                      <span className="material-symbols-outlined text-[20px]">{link.icon}</span>
-                      <span className="text-sm font-medium">{link.label}</span>
-                    </a>
+                      <span className="material-symbols-outlined text-[20px]">{section.icon}</span>
+                      <span className="text-sm font-medium">{section.label}</span>
+                    </button>
                   ))}
                 </nav>
               </div>
@@ -147,14 +150,16 @@ export default function PlanPage() {
           <div className="flex-1 overflow-y-auto p-8 min-w-[420px]">
             <div className="max-w-2xl mx-auto">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-display font-bold text-deep-navy">Recommendations</h2>
+                <h2 className="text-2xl font-display font-bold text-deep-navy">
+                  {activeSection === 'Overview' ? 'Recommendations' : activeSection}
+                </h2>
                 <span className="text-sm text-slate-500 flex items-center gap-1">
                   <span className="material-symbols-outlined text-[18px]">sort</span>
                   Ranked by Fit
                 </span>
               </div>
 
-              {recommendations.length > 0 && (
+              {recommendations.length > 0 && activeSection === 'Overview' && (
                 <p className="text-body-md text-on-surface-variant mb-6">
                   Here are the top resources for a{' '}
                   <strong>
@@ -179,23 +184,38 @@ export default function PlanPage() {
                 </div>
               )}
 
-              {timelineGroups.map((group) => (
-                <div key={group.label} className="mb-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                      {group.label}
-                    </span>
-                    <div className="flex-1 h-px bg-slate-100" />
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    {group.recs.map((rec) => (
-                      <RecommendationCard key={rec.id} rec={rec} />
-                    ))}
-                  </div>
+              {recommendations.length > 0 && displayedRecs.length < 3 && activeSection !== 'Overview' && (
+                <div className="text-center py-16 text-slate-400">
+                  <span className="material-symbols-outlined text-5xl mb-4 block">search_off</span>
+                  <p>No resources found in this category for your profile.</p>
+                  <button
+                    onClick={() => setActiveSection('Overview')}
+                    className="mt-4 text-innovation-orange hover:underline text-sm font-semibold"
+                  >
+                    View all recommendations →
+                  </button>
                 </div>
-              ))}
+              )}
 
-              {recommendations.length > 0 && (
+              {(displayedRecs.length >= 3 || activeSection === 'Overview') &&
+                recommendations.length > 0 &&
+                timelineGroups.map((group) => (
+                  <div key={group.label} className="mb-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                        {group.label}
+                      </span>
+                      <div className="flex-1 h-px bg-slate-100" />
+                    </div>
+                    <div className="flex flex-col gap-5">
+                      {group.recs.map((rec) => (
+                        <RecommendationCard key={rec.id} rec={rec} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+
+              {recommendations.length > 0 && activeSection === 'Overview' && (
                 <div className="mt-8 pt-6 border-t border-slate-100">
                   <p className="text-label-sm text-slate-400 uppercase tracking-widest mb-3">
                     Quick actions
