@@ -84,10 +84,12 @@ export default function ResourcesPage() {
 
         {/* Search bar */}
         <div className="relative mb-8">
-          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">
+          <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none" aria-hidden="true">
             search
           </span>
+          <label htmlFor="resource-search" className="sr-only">Search resources</label>
           <input
+            id="resource-search"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -112,6 +114,7 @@ export default function ResourcesPage() {
                     <span
                       className="material-symbols-outlined text-startup-green text-3xl mb-3 block"
                       style={{ fontVariationSettings: "'FILL' 1" }}
+                      aria-hidden="true"
                     >
                       {icon}
                     </span>
@@ -161,6 +164,7 @@ export default function ResourcesPage() {
             {/* Filter row */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <select
+                aria-label="Filter by topic"
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 className={selectClass}
@@ -172,6 +176,7 @@ export default function ResourcesPage() {
               </select>
 
               <select
+                aria-label="Filter by community"
                 value={community}
                 onChange={(e) => setCommunity(e.target.value)}
                 className={selectClass}
@@ -183,6 +188,7 @@ export default function ResourcesPage() {
               </select>
 
               <select
+                aria-label="Filter by county"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className={selectClass}
