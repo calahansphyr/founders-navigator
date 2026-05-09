@@ -13,10 +13,33 @@ export default function AnalyzingPage() {
   const handleComplete = useCallback(() => {
     const stored = sessionStorage.getItem(SESSION_KEYS.profile)
     const profile: FounderProfile = stored ? JSON.parse(stored) : DEFAULT_PROFILE
-    // Dynamic import to keep catalog out of initial JS bundle
-    import('@/data/catalog.json').then((mod) => {
+    import('@/data/catalog.json').then(async (mod) => {
       const catalog = mod.default as CatalogItem[]
       const recommendations = score(catalog, profile)
+
+      try {
+        const res = await fetch('/api/action-steps', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ recommendations, profile }),
+        })
+        if (res.ok) {
+          const data = await res.json()
+          const nextSteps: string[] = data.nextSteps ?? []
+          nextSteps.forEach((step, i) => {
+            if (recommendations[i]) recommendations[i].nextStep = step
+          })
+        } else {
+          recommendations.forEach((rec) => {
+            rec.nextStep = `Visit ${rec.link} to learn more.`
+          })
+        }
+      } catch {
+        recommendations.forEach((rec) => {
+          rec.nextStep = `Visit ${rec.link} to learn more.`
+        })
+      }
+
       sessionStorage.setItem(SESSION_KEYS.recommendations, JSON.stringify(recommendations))
       router.push('/plan')
     })
