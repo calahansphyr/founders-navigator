@@ -110,6 +110,7 @@ export default function RightInspector({ profile, recommendations }: Props) {
                 <tr className="text-[10px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100">
                   <th className="text-left pb-2">Metric</th>
                   <th className="text-right pb-2">Baseline</th>
+                  <th className="text-right pb-2">Current</th>
                   <th className="text-right pb-2">Target</th>
                 </tr>
               </thead>
@@ -117,8 +118,9 @@ export default function RightInspector({ profile, recommendations }: Props) {
                 {siteConfig.baselineMetrics.rows.map((row) => (
                   <tr key={row.metric}>
                     <td className="py-2 text-slate-700 font-medium">{row.metric}</td>
-                    <td className="py-2 text-right text-slate-500">{row.baseline}</td>
-                    <td className="py-2 text-right text-success font-bold">{row.target}</td>
+                    <td className="py-2 text-right text-slate-400">{row.baseline}</td>
+                    <td className={`py-2 text-right font-bold ${row.pass ? 'text-success' : 'text-innovation-orange'}`}>{row.current}</td>
+                    <td className="py-2 text-right text-slate-400">{row.target}</td>
                   </tr>
                 ))}
               </tbody>

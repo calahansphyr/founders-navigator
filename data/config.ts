@@ -62,11 +62,11 @@ export const siteConfig = {
   baselineMetrics: {
     label: 'Synthetic benchmark (30-persona simulation)',
     rows: [
-      { metric: 'Time to usable plan', baseline: '27.8 min', target: '< 5 min' },
-      { metric: 'Actions / clicks',    baseline: '68.4',     target: '< 12' },
-      { metric: 'Completion',          baseline: '50%',      target: '> 85% target' },
-      { metric: 'Confidence',          baseline: '2.6 / 5',  target: '> 4.0 target' },
-      { metric: 'Next-step clarity',   baseline: '2.6 / 5',  target: '> 4.0 target' },
+      { metric: 'Time to usable plan', baseline: '27.8 min', target: '< 5 min',  current: '0.26 min', pass: true },
+      { metric: 'Actions / clicks',    baseline: '68.4',     target: '< 12',     current: '2',        pass: true },
+      { metric: 'Completion',          baseline: '50%',      target: '> 85%',    current: '100%',     pass: true },
+      { metric: 'Confidence',          baseline: '2.6 / 5',  target: '> 4.0',    current: '3.4 / 5',  pass: false },
+      { metric: 'Next-step clarity',   baseline: '2.6 / 5',  target: '> 4.0',    current: '3.1 / 5',  pass: false },
     ],
   },
 
